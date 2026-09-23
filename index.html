@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trivex — IT solutions</title>
+<meta name="description" content="Trivex sets up, runs and supports the IT your business depends on: managed support, cloud, Odoo ERP, custom software and security.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFF8F1;
+    --sand: #F4EEE6;
+    --black: #0D0D0D;
+    --panel: #1A1A1A;
+    --ink-soft: #55504A;
+    --red: #E3181D;
+    --blue: #3B3BFF;
+    --yellow: #FFC21A;
+    --orange: #FF6A3D;
+    --line: #2B2B2B;
+    --r-lg: 36px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: var(--cream); color: var(--black); font: 400 1.0625rem/1.65 "Outfit", system-ui, sans-serif; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(1290px, 100% - 32px); margin-inline: auto; }
+  h1, h2, h3 { font-family: "Syne", sans-serif; letter-spacing: -0.01em; margin: 0; }
+  h2 { font-size: clamp(2rem, 4.2vw, 3.6rem); line-height: 1.08; font-weight: 700; }
+  .u { position: relative; white-space: nowrap; }
+  .u::after { content: ""; position: absolute; left: 0; right: 0; bottom: .02em; height: .09em; background: var(--red); border-radius: 2px; }
+  .lede { color: var(--ink-soft); max-width: 58ch; margin: 18px 0 0; }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 999px; font-weight: 500; text-decoration: none; border: 1.5px solid var(--black); background: transparent; font: inherit; cursor: pointer; transition: background .2s, color .2s; }
+  .btn svg { width: 16px; height: 16px; transition: transform .2s; }
+  .btn:hover svg { transform: translateX(3px); }
+  .btn.dark { background: var(--black); color: var(--cream); }
+  .btn.dark:hover { background: var(--blue); border-color: var(--blue); }
+  .btn.ghost:hover { background: var(--black); color: var(--cream); }
+  .on-dark .btn { border-color: var(--cream); color: var(--cream); }
+  .on-dark .btn:hover { background: var(--cream); color: var(--black); }
+
+  /* Header */
+  .top { position: sticky; top: 12px; z-index: 20; margin-top: 16px; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 10px 10px 24px; background: rgba(255,248,241,.86); backdrop-filter: blur(10px); border: 1px solid #E6DED3; border-radius: 999px; }
+  .logo { font-family: "Syne"; font-weight: 800; font-size: 1.5rem; text-decoration: none; display: flex; align-items: center; gap: 2px; }
+  .logo b { color: var(--red); }
+  .bar nav { display: flex; gap: 32px; font-weight: 500; }
+  .bar nav a { text-decoration: none; }
+  .bar nav a:hover { color: var(--red); }
+  .bar .btn { padding: 11px 22px; }
+
+  /* Hero */
+  .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding: 64px 0 88px; }
+  .stat-top strong { display: block; font-family: "Syne"; font-size: 1.9rem; font-weight: 800; line-height: 1; }
+  .stat-top span { font-weight: 500; }
+  .hero h1 { font-size: clamp(2.5rem, 5.4vw, 4.9rem); line-height: 1.04; font-weight: 700; margin: 40px 0 26px; }
+  .hero p { max-width: 50ch; color: var(--ink-soft); margin: 0 0 36px; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+  .play { display: inline-flex; align-items: center; gap: 12px; font-weight: 500; text-decoration: none; }
+  .play i { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--black); color: var(--cream); box-shadow: 0 0 0 8px #FFD9CC; }
+  .play i svg { width: 18px; height: 18px; }
+  .art { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: end; height: 540px; }
+  .capsule, .pic, .svc-art, .faq-art { display: grid; place-items: center; }
+  .ico { width: 42%; max-width: 150px; aspect-ratio: 1; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .f-black { background: var(--black); color: var(--cream); }
+  .f-blue { background: var(--blue); color: #fff; }
+  .f-yellow { background: var(--yellow); color: var(--black); }
+  .f-orange { background: var(--orange); color: var(--black); }
+  .capsule { position: relative; border-radius: 999px; overflow: hidden; }
+  .c1 { height: 440px; align-self: start; }
+  .c2 { height: 470px; }
+  .blob { position: absolute; z-index: -1; border-radius: 999px; }
+  .b-yellow { width: 46%; height: 180px; left: 2%; bottom: 20px; background: var(--yellow); border-radius: 0 0 999px 999px; }
+  .b-orange { width: 44%; height: 160px; right: 0; top: 0; background: var(--orange); border-radius: 999px 999px 0 0; }
+  .star { position: absolute; width: 58px; height: 58px; color: var(--orange); }
+  .s1 { left: -30px; top: 110px; }
+  .s2 { right: -14px; bottom: 70px; color: var(--yellow); width: 40px; height: 40px; z-index: 1; }
+
+  /* Marquee */
+  .marquee { background: var(--black); color: var(--cream); overflow: hidden; padding: 22px 0; }
+  .track { display: flex; width: max-content; animation: slide 36s linear infinite; }
+  .track span { font-family: "Syne"; font-weight: 700; font-size: clamp(1.4rem, 2.6vw, 2.2rem); display: flex; align-items: center; gap: 36px; padding-right: 36px; white-space: nowrap; }
+  .track span:nth-child(even) { color: transparent; -webkit-text-stroke: 1px var(--cream); }
+  .track svg { width: 30px; height: 30px; color: var(--blue); flex: none; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .track { animation: none; } }
+
+  /* About panel */
+  .about { background: var(--sand); border-radius: 0 0 var(--r-lg) var(--r-lg); padding: 110px 0 90px; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .about .btn { margin-top: 36px; }
+  .pics { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .pics .pic { height: 190px; border-radius: 24px; overflow: hidden; }
+  .stats { display: flex; gap: 48px; margin-top: 36px; }
+  .stats strong { display: block; font-family: "Syne"; font-weight: 800; font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1; }
+  .stats span { font-weight: 500; }
+  .platforms { margin-top: 80px; padding-top: 40px; border-top: 1px solid #DDD3C6; }
+  .platforms p { margin: 0 0 22px; color: var(--ink-soft); }
+  .platforms ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px 40px; }
+  .platforms li { font-family: "Syne"; font-weight: 700; font-size: 1.5rem; opacity: .75; }
+
+  /* Services */
+  .services { padding: 130px 0; }
+  .services h2 { text-align: center; }
+  .services .lede { margin-inline: auto; text-align: center; }
+  .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 64px; align-items: center; }
+  .svc-art { position: relative; aspect-ratio: 1; width: min(100%, 460px); justify-self: center; border-radius: 46% 54% 42% 58% / 52% 44% 56% 48%; overflow: hidden; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .card { border: 1.5px solid var(--black); border-radius: 24px; padding: 30px 28px; background: var(--cream); transition: background .25s, color .25s; }
+  .card:hover { background: var(--black); color: var(--cream); }
+  .card:hover p { color: #CFC8BF; }
+  .card .n { font-family: "Syne"; font-weight: 700; color: #B9B1A6; }
+  .card h3 { font-size: 1.55rem; font-weight: 700; margin: 14px 0 12px; line-height: 1.15; }
+  .card p { margin: 0; color: var(--ink-soft); font-size: 1rem; }
+
+  /* Solutions accordion (dark) */
+  .solutions { background: var(--black); color: var(--cream); border-radius: var(--r-lg); padding: 120px 0; }
+  .solutions .lede { color: #BDB6AD; }
+  .acc { margin-top: 56px; display: grid; gap: 22px; }
+  .row { background: var(--panel); border-radius: 22px; }
+  .row-head { display: grid; grid-template-columns: 90px 1fr 1.3fr auto; gap: 24px; align-items: center; padding: 34px 40px; }
+  .row-toggle { all: unset; cursor: pointer; display: contents; }
+  .row-toggle .arr { width: 48px; height: 48px; transition: transform .3s; }
+  .row.open .arr { transform: rotate(90deg); }
+  .row h3 { font-size: 1.7rem; font-weight: 700; line-height: 1.15; }
+  .row p { margin: 0; color: #D8D2CA; max-width: 46ch; }
+  .row-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
+  .row.open .row-body { grid-template-rows: 1fr; }
+  .row-body > div { overflow: hidden; }
+  .incl { list-style: none; margin: 0 40px 40px calc(40px + 90px + 24px); padding: 28px 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 32px; color: #D8D2CA; }
+  .incl li { display: flex; gap: 12px; align-items: baseline; }
+  .incl li::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--red); transform: translateY(-2px); }
+  .row-toggle:focus-visible .arr { outline: 3px solid var(--blue); outline-offset: 6px; border-radius: 50%; }
+
+  /* Why */
+  .why { padding: 130px 0 100px; }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+  .why-card { border: 1.5px solid var(--black); border-radius: 30px; padding: 40px 36px; }
+  .why-card svg { width: 44px; height: 44px; color: var(--red); }
+  .why-card h3 { font-size: 1.45rem; margin: 22px 0 10px; }
+  .why-card p { margin: 0; color: var(--ink-soft); }
+
+  /* FAQ */
+  .faq { padding: 60px 0 130px; }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start; }
+  .faq-art { margin-top: 44px; height: 320px; border-radius: 999px 999px 30px 30px; overflow: hidden; max-width: 420px; }
+  .q { border: 1.5px solid var(--black); border-radius: 18px; margin-bottom: 18px; background: #fff; }
+  .q button { all: unset; box-sizing: border-box; cursor: pointer; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 26px; font-family: "Syne"; font-weight: 700; font-size: 1.15rem; }
+  .q button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 18px; }
+  .q .pm { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--black); display: grid; place-items: center; transition: transform .3s, background .3s; }
+  .q .pm svg { width: 14px; height: 14px; }
+  .q.open .pm { transform: rotate(45deg); background: var(--black); color: #fff; }
+  .q .a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+  .q.open .a { grid-template-rows: 1fr; }
+  .q .a > div { overflow: hidden; }
+  .q .a p { margin: 0; padding: 0 26px 24px; color: var(--ink-soft); }
+
+  /* CTA + footer */
+  .cta { background: var(--black); color: var(--cream); border-radius: var(--r-lg) var(--r-lg) 0 0; padding: 110px 0 0; }
+  .cta-top { display: flex; justify-content: space-between; align-items: end; gap: 32px; flex-wrap: wrap; padding-bottom: 90px; border-bottom: 1px solid var(--line); }
+  .cta .lede { color: #BDB6AD; }
+  .foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding: 70px 0; }
+  .foot h3 { font-size: 1.15rem; margin-bottom: 18px; }
+  .foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; color: #BDB6AD; }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--cream); text-decoration: underline; }
+  .foot .logo { font-size: 2rem; margin-bottom: 14px; }
+  .foot .blurb { color: #BDB6AD; max-width: 32ch; margin: 0; }
+  .legal { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 26px 0 34px; border-top: 1px solid var(--line); color: #8D867E; font-size: .95rem; }
+
+  @media (max-width: 1000px) {
+    .hero, .about-grid, .svc-grid, .faq-grid { grid-template-columns: 1fr; }
+    .art { height: 440px; max-width: 560px; }
+    .c1 { height: 360px; } .c2 { height: 390px; }
+    .row-head { grid-template-columns: 56px 1fr auto; }
+    .row-head p { grid-column: 2 / -1; }
+    .row-toggle .arr { width: 36px; height: 36px; }
+    .incl { list-style: none; margin: 0 40px 40px calc(40px + 90px + 24px); padding: 28px 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 32px; color: #D8D2CA; }
+  .incl li { display: flex; gap: 12px; align-items: baseline; }
+  .incl li::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--red); transform: translateY(-2px); }
+    .why-grid { grid-template-columns: 1fr; }
+    .foot { grid-template-columns: 1fr 1fr; }
+    .svc-art { max-width: 460px; }
+  }
+  @media (max-width: 720px) {
+    .bar nav { display: none; }
+    .hero { padding-top: 36px; }
+    .art { height: 360px; gap: 12px; }
+    .c1 { height: 290px; } .c2 { height: 320px; }
+    .s1 { left: -8px; top: 40px; width: 42px; height: 42px; }
+    .cards { grid-template-columns: 1fr; }
+    .row-head { padding: 26px 22px; gap: 16px; grid-template-columns: 40px 1fr; }
+    .row-head .btn { grid-column: 2; justify-self: start; }
+    .row h3 { font-size: 1.35rem; }
+    .stats { gap: 32px; }
+    .foot { grid-template-columns: 1fr; }
+    .about, .services, .solutions, .why { padding-block: 80px; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 40 40"><path d="M20 0c1.2 10.6 8.3 18 20 20-11.7 2-18.8 9.4-20 20-1.2-10.6-8.3-18-20-20C11.7 18 18.8 10.6 20 0Z" fill="currentColor"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 48 48"><path d="M4 24h38M30 12c0 7 5 12 12 12-7 0-12 5-12 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="i-server" viewBox="0 0 48 48"><rect x="8" y="7" width="32" height="10" rx="3"/><rect x="8" y="19" width="32" height="10" rx="3"/><rect x="8" y="31" width="32" height="10" rx="3"/><path d="M14 12h.01M14 24h.01M14 36h.01M22 12h12M22 24h12M22 36h12"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 48 48"><path d="M14 36h21a8 8 0 0 0 1-15.9A11 11 0 0 0 15 18.5 9 9 0 0 0 14 36Z"/><path d="M24 25v10m-4-4 4 4 4-4"/></symbol>
+  <symbol id="i-network" viewBox="0 0 48 48"><circle cx="24" cy="10" r="5"/><circle cx="10" cy="38" r="5"/><circle cx="38" cy="38" r="5"/><path d="M24 15v9M24 24 12.5 34M24 24l11.5 10"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 5 39 11v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V11L24 5Z"/><path d="m17 24 5 5 9-10"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 48 48"><rect x="9" y="10" width="30" height="21" rx="2"/><path d="M4 38h40M20 17l-4 4 4 4M28 17l4 4-4 4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 48 48"><path d="M8 10h32v22H22l-9 7v-7H8z"/><path d="M20 18a4 4 0 1 1 5.5 3.7c-1 .5-1.5 1.2-1.5 2.3M24 28h.01"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 16 16"><path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="wrap top">
+  <div class="bar">
+    <a class="logo" href="#">Trivex<b>.</b></a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn dark" href="#contact">Contact us</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <div class="wrap hero">
+    <div>
+      <div class="stat-top"><strong>24/7</strong><span>System monitoring</span></div>
+      <h1>Run your business on IT that <span class="u">just works</span></h1>
+      <p>Trivex sets up, manages and supports the technology your team relies on every day, from office networks and cloud servers to Odoo ERP.</p>
+      <div class="actions">
+        <a class="btn dark" href="#contact">Get started <svg><use href="#i-arrow"/></svg></a>
+        <a class="play" href="#services"><i><svg><use href="#i-arrow"/></svg></i>See our services</a>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <span class="blob b-yellow"></span>
+      <span class="blob b-orange"></span>
+      <div class="capsule c1 f-black"><svg class="ico"><use href="#i-server"/></svg></div>
+      <div class="capsule c2 f-blue"><svg class="ico"><use href="#i-cloud"/></svg></div>
+      <svg class="star s1"><use href="#i-star"/></svg>
+      <svg class="star s2"><use href="#i-star"/></svg>
+    </div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Managed IT <svg><use href="#i-star"/></svg></span>
+      <span>Cloud &amp; infrastructure <svg><use href="#i-star"/></svg></span>
+      <span>Odoo ERP <svg><use href="#i-star"/></svg></span>
+      <span>Cybersecurity <svg><use href="#i-star"/></svg></span>
+      <span>Custom software <svg><use href="#i-star"/></svg></span>
+      <span>Managed IT <svg><use href="#i-star"/></svg></span>
+      <span>Cloud &amp; infrastructure <svg><use href="#i-star"/></svg></span>
+      <span>Odoo ERP <svg><use href="#i-star"/></svg></span>
+      <span>Cybersecurity <svg><use href="#i-star"/></svg></span>
+      <span>Custom software <svg><use href="#i-star"/></svg></span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <h2>Simplify your tech with <span class="u">one partner</span></h2>
+          <p class="lede">Most growing businesses end up with a different vendor for email, servers, software and support. When something breaks, nobody owns it. Trivex takes the whole stack, so you have one team to call and one team accountable.</p>
+          <a class="btn ghost" href="#services">Read more <svg><use href="#i-arrow"/></svg></a>
+        </div>
+        <div>
+          <div class="pics" aria-hidden="true">
+            <div class="pic f-yellow"><svg class="ico"><use href="#i-network"/></svg></div>
+            <div class="pic f-black"><svg class="ico"><use href="#i-shield"/></svg></div>
+          </div>
+          <div class="stats">
+            <div><strong>5</strong><span>Service lines, one team</span></div>
+            <div><strong>1 day</strong><span>Reply time on new enquiries</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="platforms">
+        <p>Platforms we set up and support</p>
+        <ul>
+          <li>Odoo</li><li>AWS</li><li>Microsoft 365</li><li>Google Workspace</li><li>Azure</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2>Keep your business <span class="u">running</span><br>through technology</h2>
+      <p class="lede">Four core services, delivered by engineers who know your setup.</p>
+      <div class="svc-grid">
+        <div class="svc-art f-orange" aria-hidden="true"><svg class="ico"><use href="#i-laptop"/></svg></div>
+        <div class="cards">
+          <article class="card"><span class="n">01</span><h3>Managed IT support</h3><p>A helpdesk your staff can call, plus patching, monitoring and backups for every device.</p></article>
+          <article class="card"><span class="n">02</span><h3>Cloud &amp; infrastructure</h3><p>Servers, networks, email and storage, moved to the cloud or tidied up and sized right.</p></article>
+          <article class="card"><span class="n">03</span><h3>Odoo ERP</h3><p>Setup, customisation, data migration and support so sales, stock and accounts share one system.</p></article>
+          <article class="card"><span class="n">04</span><h3>Cybersecurity</h3><p>Firewalls, access control, audits and staff training that close the common gaps.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="solutions on-dark" id="solutions">
+    <div class="wrap">
+      <h2>Solutions shaped around <span class="u">your business</span></h2>
+      <p class="lede">Projects we take on from start to finish. Open one to see what's included.</p>
+      <div class="acc">
+        <div class="row open">
+          <div class="row-head">
+            <button class="row-toggle" aria-expanded="true" aria-controls="sol-1"><svg class="arr"><use href="#i-branch"/></svg><h3>ERP rollouts</h3></button>
+            <p>We map your sales, inventory and accounting processes, then configure Odoo around them and train your team.</p>
+            <a class="btn" href="#contact">Get started <svg><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="row-body" id="sol-1"><div><ul class="incl"><li>Process mapping workshop</li><li>Odoo configuration and custom modules</li><li>Data migration from your old system</li><li>Staff training and go-live support</li></ul></div></div>
+        </div>
+        <div class="row">
+          <div class="row-head">
+            <button class="row-toggle" aria-expanded="false" aria-controls="sol-2"><svg class="arr"><use href="#i-branch"/></svg><h3>Custom software</h3></button>
+            <p>Websites, client portals and internal tools built around how your team works, and maintained after launch.</p>
+            <a class="btn" href="#contact">Get started <svg><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="row-body" id="sol-2"><div><ul class="incl"><li>Websites and client portals</li><li>Internal tools and dashboards</li><li>Integrations with your existing apps</li><li>Hosting, updates and maintenance</li></ul></div></div>
+        </div>
+        <div class="row">
+          <div class="row-head">
+            <button class="row-toggle" aria-expanded="false" aria-controls="sol-3"><svg class="arr"><use href="#i-branch"/></svg><h3>Office network setup</h3></button>
+            <p>Wi-Fi, cabling, firewalls, printers and user accounts, ready for your team on day one.</p>
+            <a class="btn" href="#contact">Get started <svg><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="row-body" id="sol-3"><div><ul class="incl"><li>Wi-Fi and structured cabling</li><li>Firewall and VPN setup</li><li>Printers, devices and user accounts</li><li>Network documentation you keep</li></ul></div></div>
+        </div>
+        <div class="row">
+          <div class="row-head">
+            <button class="row-toggle" aria-expanded="false" aria-controls="sol-4"><svg class="arr"><use href="#i-branch"/></svg><h3>Backup &amp; recovery</h3></button>
+            <p>Automatic, tested backups of your files and systems, with a written plan for getting back online fast.</p>
+            <a class="btn" href="#contact">Get started <svg><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="row-body" id="sol-4"><div><ul class="incl"><li>Automatic daily backups</li><li>Off-site and cloud copies</li><li>Regular restore tests</li><li>A written recovery plan</li></ul></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section class="why">
+    <div class="wrap">
+      <h2>Why teams <span class="u">choose</span> Trivex</h2>
+      <div class="why-grid">
+        <article class="why-card">
+          <svg><use href="#i-star"/></svg>
+          <h3>One accountable team</h3>
+          <p>Support, cloud, ERP and security under one roof, so problems don't bounce between vendors.</p>
+        </article>
+        <article class="why-card">
+          <svg><use href="#i-star"/></svg>
+          <h3>Clear, fixed quotes</h3>
+          <p>You get a written scope and price before any work begins, with no surprise invoices.</p>
+        </article>
+        <article class="why-card">
+          <svg><use href="#i-star"/></svg>
+          <h3>We stay after launch</h3>
+          <p>Every project comes with ongoing support, so the system keeps working as you grow.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap faq-grid">
+      <div>
+        <h2>Questions before you <span class="u">get started</span></h2>
+        <p class="lede">Can't find your answer? Email us and an engineer will reply.</p>
+        <div class="faq-art f-yellow" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></div>
+      </div>
+      <div>
+        <div class="q open"><button aria-expanded="true" aria-controls="q1">What does managed IT support include?<span class="pm"><svg><use href="#i-plus"/></svg></span></button>
+          <div class="a" id="q1"><div><p>A helpdesk for your staff, monitoring of your devices and servers, security updates, backups and a monthly report on what we fixed.</p></div></div></div>
+        <div class="q"><button aria-expanded="false" aria-controls="q2">Can you take over our existing Odoo setup?<span class="pm"><svg><use href="#i-plus"/></svg></span></button>
+          <div class="a" id="q2"><div><p>Yes. We start with a review of your current modules, customisations and data, then take over support or plan an upgrade.</p></div></div></div>
+        <div class="q"><button aria-expanded="false" aria-controls="q3">How is pricing structured?<span class="pm"><svg><use href="#i-plus"/></svg></span></button>
+          <div class="a" id="q3"><div><p>Projects are quoted at a fixed price after an audit. Ongoing support is a monthly plan based on the number of users and devices.</p></div></div></div>
+        <div class="q"><button aria-expanded="false" aria-controls="q4">Do we need to replace our current systems?<span class="pm"><svg><use href="#i-plus"/></svg></span></button>
+          <div class="a" id="q4"><div><p>Usually not. We work with what you have and only recommend replacing things that are unsafe, unsupported or costing you more than they should.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- CTA + footer -->
+<footer class="cta on-dark" id="contact">
+  <div class="wrap">
+    <div class="cta-top">
+      <div>
+        <h2>Want to work <span class="u">with us?</span></h2>
+        <p class="lede">Tell us about your setup and what's slowing you down. An engineer will reply within one business day.</p>
+      </div>
+      <a class="btn" href="mailto:trivexitoultion@gmail.com">Email trivexitoultion@gmail.com <svg><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="foot">
+      <div>
+        <a class="logo" href="#">Trivex<b>.</b></a>
+        <p class="blurb">IT solutions for growing businesses: support, cloud, ERP, software and security.</p>
+      </div>
+      <div><h3>Services</h3><ul><li><a href="#services">Managed IT</a></li><li><a href="#services">Cloud</a></li><li><a href="#services">Odoo ERP</a></li><li><a href="#services">Cybersecurity</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="#about">About</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h3>Contact</h3><ul><li><a href="mailto:trivexitoultion@gmail.com">trivexitoultion@gmail.com</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© <span id="yr"></span> Trivex. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Accordions: solutions rows open one at a time; FAQ items open one at a time.
+function accordion(itemSel, btnSel) {
+  const items = [...document.querySelectorAll(itemSel)];
+  items.forEach(item => item.querySelector(btnSel).addEventListener('click', () => {
+    const willOpen = !item.classList.contains('open');
+    items.forEach(i => { i.classList.remove('open'); i.querySelector(btnSel).setAttribute('aria-expanded', 'false'); });
+    if (willOpen) { item.classList.add('open'); item.querySelector(btnSel).setAttribute('aria-expanded', 'true'); }
+  }));
+}
+accordion('.row', '.row-toggle');
+accordion('.q', 'button');
+
+</script>
+</body>
+</html>
