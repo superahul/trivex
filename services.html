@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — Trivex</title>
+<meta name="description" content="Managed IT support, AWS cloud, Odoo ERP, custom software, mobile apps, AI agents, chatbots and security from one team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-support" viewBox="0 0 28 28"><path d="M5 16v-3a9 9 0 0 1 18 0v3"/><rect x="3" y="15" width="5" height="7" rx="1.5"/><rect x="20" y="15" width="5" height="7" rx="1.5"/><path d="M22.5 22c0 2-2 3-5 3H15"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 28 28"><path d="M8 21h12.5a4.5 4.5 0 0 0 .6-9A7 7 0 0 0 7.8 10.6 5.3 5.3 0 0 0 8 21Z"/></symbol>
+  <symbol id="i-erp" viewBox="0 0 28 28"><rect x="4" y="4" width="8" height="8" rx="1.5"/><rect x="16" y="4" width="8" height="8" rx="1.5"/><rect x="4" y="16" width="8" height="8" rx="1.5"/><path d="M20 16v8M16 20h8"/></symbol>
+  <symbol id="i-code" viewBox="0 0 28 28"><path d="m10 9-5 5 5 5M18 9l5 5-5 5M15.5 6l-3 16"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 28 28"><path d="M14 3.5 23 7v6.5c0 5.6-3.8 9.6-9 11-5.2-1.4-9-5.4-9-11V7l9-3.5Z"/><path d="m10 14 3 3 5.5-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 28 28"><rect x="8" y="3" width="12" height="22" rx="2.5"/><path d="M12.5 21h3"/></symbol>
+  <symbol id="i-agent" viewBox="0 0 28 28"><rect x="6" y="9" width="16" height="13" rx="3"/><path d="M14 9V5M11 15h.01M17 15h.01M11 19h6M3 14v3M25 14v3"/><circle cx="14" cy="4" r="1.2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 28 28"><path d="M5 6h18v12H13l-5 4v-4H5z"/><path d="M10 11h8M10 14h5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Trivex home">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="#56C98F"/><path d="M8 9h10M13 9v9" stroke="#0E2A21" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Trivex
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><i></i>Menu</button>
+    <nav id="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" aria-current="page">Services</a>
+      <a class="btn btn-light" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <div class="dots page-hero">
+    <div class="wrap">
+      <h1>Services</h1>
+      <p class="lede">Pick the services you need. Each is run by engineers who know your setup, so you never have to explain it twice.</p>
+    </div>
+  </div>
+
+<main>
+  <section class="sec white">
+    <div class="wrap">
+      <div class="explorer">
+        <div class="tabs" role="tablist" aria-label="Services" aria-orientation="vertical">
+          <button class="tab" role="tab" id="t-it" data-slug="managed-it" aria-controls="s-it" aria-selected="true"><svg aria-hidden="true"><use href="#i-support"/></svg>Managed IT support</button>
+          <button class="tab" role="tab" id="t-cloud" data-slug="cloud" aria-controls="s-cloud" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#i-cloud"/></svg>Cloud and infrastructure</button>
+          <button class="tab" role="tab" id="t-erp" data-slug="odoo" aria-controls="s-erp" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#i-erp"/></svg>Odoo ERP</button>
+          <button class="tab" role="tab" id="t-sw" data-slug="software" aria-controls="s-sw" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#i-code"/></svg>Custom software</button>
+          <button class="tab" role="tab" id="t-app" data-slug="mobile-apps" aria-controls="s-app" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#i-phone"/></svg>Mobile apps</button>
+          <button class="tab" role="tab" id="t-ai" data-slug="ai-agents" aria-controls="s-ai" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#i-agent"/></svg>AI agents</button>
+          <button class="tab" role="tab" id="t-bot" data-slug="chatbots" aria-controls="s-bot" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#i-chat"/></svg>Chatbots</button>
+          <button class="tab" role="tab" id="t-sec" data-slug="security" aria-controls="s-sec" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#i-shield"/></svg>Security</button>
+        </div>
+
+        <div class="pane" role="tabpanel" id="s-it" aria-labelledby="t-it">
+          <div>
+            <h3>A helpdesk for your staff, and eyes on every system</h3>
+            <p>Your team calls one number for help. Behind the scenes, we monitor, update and back up every device and server.</p>
+            <ul class="ticks"><li>Helpdesk for staff by phone and email</li><li>Monitoring, patching and antivirus</li><li>Daily backups, tested regularly</li><li>A monthly report of what we fixed</li></ul>
+            <a class="btn btn-dark" href="contact.html?service=managed-it">Ask about support plans</a>
+          </div>
+          <div class="vis">
+            <div class="board" id="board" aria-label="Example morning check">
+              <div class="board-head"><strong>Morning check</strong><span>Today, 07:30</span></div>
+              <ul>
+                <li>Email and Microsoft 365<span class="state"><span class="v">Running</span><span class="w">Checking</span></span></li>
+                <li>Odoo ERP<span class="state"><span class="v">Running</span><span class="w">Checking</span></span></li>
+                <li>Nightly backup<span class="state"><span class="v">Done at 02:14</span><span class="w">Checking</span></span></li>
+                <li>Firewall and VPN<span class="state"><span class="v">Up to date</span><span class="w">Checking</span></span></li>
+                <li>Staff laptops (24)<span class="state"><span class="v">All patched</span><span class="w">Checking</span></span></li>
+              </ul>
+              <div class="board-foot"><span>Checks passed</span><b id="passed">5 of 5</b></div>
+            </div>
+            <p class="vis-note">An example of the daily check we run for managed clients.</p>
+          </div>
+        </div>
+
+        <div class="pane" role="tabpanel" id="s-cloud" aria-labelledby="t-cloud" hidden>
+          <div>
+            <h3>Cloud infrastructure, designed and built on AWS</h3>
+            <p>We design and set up the servers behind your websites and apps, so they stay fast when traffic spikes and cost less when it’s quiet.</p>
+            <ul class="ticks"><li>AWS EC2 servers and hosting</li><li>Auto scaling and load balancers</li><li>Custom Lambda functions</li><li>Moves to Microsoft 365 and Google Workspace</li><li>Office Wi-Fi, cabling and VPN</li></ul>
+            <a class="btn btn-dark" href="contact.html?service=cloud">Plan your setup</a>
+          </div>
+          <div class="vis">
+            <div class="arch" role="img" aria-label="Example AWS setup: visitors reach a load balancer, which spreads traffic across an auto scaling group of EC2 servers, backed by a database and Lambda functions">
+              <div class="node">Visitors</div>
+              <i class="link"></i>
+              <div class="node dark">Load balancer</div>
+              <i class="link"></i>
+              <div class="asg">
+                <b>Auto scaling group</b>
+                <div class="ec2"><span>EC2</span><span>EC2</span><span class="spare">+ at peak</span></div>
+              </div>
+              <i class="link"></i>
+              <div class="pair"><div class="node">Database</div><div class="node">Lambda functions</div></div>
+            </div>
+            <p class="vis-note">An example setup for a web app that gets busy at month end.</p>
+          </div>
+        </div>
+
+        <div class="pane" role="tabpanel" id="s-erp" aria-labelledby="t-erp" hidden>
+          <div>
+            <h3>Sales, stock and accounts in one system</h3>
+            <p>We set up Odoo around the way your business already works, move your data across, and train your team to use it.</p>
+            <ul class="ticks"><li>Setup and custom modules</li><li>Data migration from your old system</li><li>Takeover of existing Odoo setups</li><li>Training and ongoing support</li></ul>
+            <a class="btn btn-dark" href="contact.html?service=odoo">Talk about Odoo</a>
+          </div>
+          <div class="vis">
+            <div class="mods">
+              <div class="mod on">Sales<small>Set up</small></div>
+              <div class="mod on">CRM<small>Set up</small></div>
+              <div class="mod on">Inventory<small>Set up</small></div>
+              <div class="mod on">Purchase<small>Set up</small></div>
+              <div class="mod on">Accounting<small>Set up</small></div>
+              <div class="mod">Manufacturing<small>Later</small></div>
+              <div class="mod on">Invoicing<small>Set up</small></div>
+              <div class="mod">Employees<small>Later</small></div>
+              <div class="mod">Website<small>Later</small></div>
+            </div>
+            <p class="vis-note">An example rollout: start with what you need, add modules as you grow.</p>
+          </div>
+        </div>
+
+        <div class="pane" role="tabpanel" id="s-sw" aria-labelledby="t-sw" hidden>
+          <div>
+            <h3>Websites, portals and tools built for your team</h3>
+            <p>When off-the-shelf software doesn’t fit, we build what does, connect it to the apps you already use, and keep it running after launch.</p>
+            <ul class="ticks"><li>Company websites</li><li>Client and dealer portals</li><li>Internal tools and dashboards</li><li>Hosting, updates and maintenance</li></ul>
+            <a class="btn btn-dark" href="contact.html?service=software">Describe your project</a>
+          </div>
+          <div class="vis">
+            <div class="browser" role="img" aria-label="Example client portal showing a customer’s orders and their status">
+              <div class="chrome"><div><i></i><i></i><i></i></div><span>portal.yourcompany.com</span></div>
+              <div class="app">
+                <div class="side"><b>Portal</b><span class="on"></span><span></span><span></span><span></span></div>
+                <div class="main">
+                  <b>Your orders</b>
+                  <div class="row"><span>SO-1042<small>12 units</small></span><span class="pill">Shipped</span></div>
+                  <div class="row"><span>SO-1041<small>40 units</small></span><span class="pill">Paid</span></div>
+                  <div class="row"><span>SO-1039<small>8 units</small></span><span class="pill wait">Awaiting stock</span></div>
+                  <div class="row"><span>SO-1036<small>25 units</small></span><span class="pill">Delivered</span></div>
+                </div>
+              </div>
+            </div>
+            <p class="vis-note">An example dealer portal, connected to Odoo.</p>
+          </div>
+        </div>
+
+        <div class="pane" role="tabpanel" id="s-app" aria-labelledby="t-app" hidden>
+          <div>
+            <h3>Mobile apps, from design to the app stores</h3>
+            <p>We design, build and launch apps for your customers or your team, and keep them updated after release.</p>
+            <ul class="ticks"><li>Design, from wireframes to final screens</li><li>Native iOS and Android apps</li><li>Hybrid apps from one Flutter codebase</li><li>Connected to Odoo or your own backend</li><li>App Store and Play Store release</li></ul>
+            <a class="btn btn-dark" href="contact.html?service=mobile-apps">Talk about your app</a>
+          </div>
+          <div class="vis">
+            <div class="phone" role="img" aria-label="Example customer app showing an order that has been placed, packed and shipped">
+              <div class="notch"></div>
+              <div class="screen">
+                <b>Order SO-1042</b>
+                <small>12 units, arriving Friday</small>
+                <ol class="track">
+                  <li class="done">Placed</li>
+                  <li class="done">Packed</li>
+                  <li class="now">Shipped</li>
+                  <li>Delivered</li>
+                </ol>
+                <span class="app-btn">Track delivery</span>
+              </div>
+              <div class="tabbar"><i class="on"></i><i></i><i></i><i></i></div>
+            </div>
+            <ul class="plats"><li>iOS</li><li>Android</li><li>Flutter</li><li>Native</li><li>Hybrid</li></ul>
+          </div>
+        </div>
+
+        <div class="pane" role="tabpanel" id="s-ai" aria-labelledby="t-ai" hidden>
+          <div>
+            <h3>AI agents that take repetitive work off your team</h3>
+            <p>An AI agent works through routine tasks in your own systems, such as Odoo, email and shared files, and asks a person before doing anything important.</p>
+            <ul class="ticks"><li>Invoice matching, data entry and reports</li><li>Works inside Odoo, email and your files</li><li>A person approves anything important</li><li>Every step is logged so you can check it</li></ul>
+            <a class="btn btn-dark" href="contact.html?service=ai-agents">Find a task to automate</a>
+          </div>
+          <div class="vis">
+            <div class="board agent">
+              <div class="board-head"><strong>Match yesterday’s payments</strong><span>09:00</span></div>
+              <ul>
+                <li>Read 42 invoices from Odoo<span class="state">Done</span></li>
+                <li>Read the bank statement<span class="state">Done</span></li>
+                <li>Matched 40 payments to invoices<span class="state">Done</span></li>
+                <li>2 payments didn’t match<span class="state hold">Needs you</span></li>
+              </ul>
+              <div class="approve"><span>Mark the 40 matched invoices as paid?</span><div><b class="yes">Approve</b><b>Review</b></div></div>
+            </div>
+            <p class="vis-note">An example agent run for an accounts team.</p>
+          </div>
+        </div>
+
+        <div class="pane" role="tabpanel" id="s-bot" aria-labelledby="t-bot" hidden>
+          <div>
+            <h3>Chatbots that answer customers any time of day</h3>
+            <p>A bot on your website or WhatsApp answers common questions from your own information, and hands the chat to your team when a person is needed.</p>
+            <ul class="ticks"><li>Website chat and WhatsApp bots</li><li>Order status, bookings and lead capture</li><li>Answers from your FAQs and Odoo data</li><li>Hands over to your team when needed</li></ul>
+            <a class="btn btn-dark" href="contact.html?service=chatbots">Plan a chatbot</a>
+          </div>
+          <div class="vis">
+            <div class="chat" role="img" aria-label="Example chat: a customer asks where their order is and the bot replies that it shipped today and will arrive Friday">
+              <div class="chat-head"><i></i><div><b>Help</b><small>Replies instantly</small></div></div>
+              <div class="msgs">
+                <p class="them">Hi, where is my order SO-1042?</p>
+                <p class="bot">It shipped today and should arrive on Friday. Would you like the tracking link?</p>
+                <p class="them">Yes please</p>
+                <p class="bot">Here it is: track.example.com/1042. Anything else I can help with?</p>
+              </div>
+              <div class="quick"><span>Change delivery address</span><span>Talk to a person</span></div>
+            </div>
+            <p class="vis-note">An example order-status bot, connected to Odoo.</p>
+          </div>
+        </div>
+
+        <div class="pane" role="tabpanel" id="s-sec" aria-labelledby="t-sec" hidden>
+          <div>
+            <h3>Close the gaps most businesses leave open</h3>
+            <p>Most attacks get in through weak passwords, old software or untested backups. We fix the basics first, then keep them fixed.</p>
+            <ul class="ticks"><li>Firewall and VPN setup</li><li>Two-step sign-in and access control</li><li>Security audits and staff training</li><li>A written recovery plan</li></ul>
+            <a class="btn btn-dark" href="contact.html?service=security">Book a security review</a>
+          </div>
+          <div class="vis">
+            <div class="board">
+              <div class="board-head"><strong>Security review</strong><span>Every quarter</span></div>
+              <ul>
+                <li>Firewall rules reviewed<span class="state">Passed</span></li>
+                <li>Two-step sign-in for all staff<span class="state">Passed</span></li>
+                <li>Backups restored and tested<span class="state">Passed</span></li>
+                <li>Old admin accounts removed<span class="state">Passed</span></li>
+                <li>Staff phishing training<span class="state">Passed</span></li>
+              </ul>
+              <div class="board-foot"><span>Items passed</span><b>5 of 5</b></div>
+            </div>
+            <p class="vis-note">An example of the checklist we review with clients each quarter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>How pricing works</h2>
+        <p class="lede">No hourly meter running in the background. You know the cost before you commit.</p>
+      </div>
+      <div class="terms">
+        <div class="term"><h3>Projects</h3><p>Rollouts, migrations and builds are quoted at a fixed price after an audit, with a written scope of what’s included.</p></div>
+        <div class="term dark"><h3>Ongoing support</h3><p>A monthly plan based on the number of users and devices you have. It covers the helpdesk, monitoring, updates and backups.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2>Tell us what needs fixing</h2>
+        <p class="lede">An engineer reads every enquiry and replies within one business day.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-light" href="contact.html">Contact us</a>
+        <a class="btn btn-line" href="mailto:trivexitsolution@gmail.com">Email directly</a>
+      </div>
+    </div>
+    <div class="foot">
+      <span>© <span id="yr">2026</span> Trivex. IT solutions for growing businesses.</span>
+      <nav aria-label="Footer"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></nav>
+    </div>
+    <div class="mark" aria-hidden="true">Trivex</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

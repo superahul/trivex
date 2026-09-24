@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Trivex</title>
+<meta name="description" content="Email Trivex about your IT. An engineer replies within one business day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-support" viewBox="0 0 28 28"><path d="M5 16v-3a9 9 0 0 1 18 0v3"/><rect x="3" y="15" width="5" height="7" rx="1.5"/><rect x="20" y="15" width="5" height="7" rx="1.5"/><path d="M22.5 22c0 2-2 3-5 3H15"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 28 28"><path d="M8 21h12.5a4.5 4.5 0 0 0 .6-9A7 7 0 0 0 7.8 10.6 5.3 5.3 0 0 0 8 21Z"/></symbol>
+  <symbol id="i-erp" viewBox="0 0 28 28"><rect x="4" y="4" width="8" height="8" rx="1.5"/><rect x="16" y="4" width="8" height="8" rx="1.5"/><rect x="4" y="16" width="8" height="8" rx="1.5"/><path d="M20 16v8M16 20h8"/></symbol>
+  <symbol id="i-code" viewBox="0 0 28 28"><path d="m10 9-5 5 5 5M18 9l5 5-5 5M15.5 6l-3 16"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 28 28"><path d="M14 3.5 23 7v6.5c0 5.6-3.8 9.6-9 11-5.2-1.4-9-5.4-9-11V7l9-3.5Z"/><path d="m10 14 3 3 5.5-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 28 28"><rect x="8" y="3" width="12" height="22" rx="2.5"/><path d="M12.5 21h3"/></symbol>
+  <symbol id="i-agent" viewBox="0 0 28 28"><rect x="6" y="9" width="16" height="13" rx="3"/><path d="M14 9V5M11 15h.01M17 15h.01M11 19h6M3 14v3M25 14v3"/><circle cx="14" cy="4" r="1.2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 28 28"><path d="M5 6h18v12H13l-5 4v-4H5z"/><path d="M10 11h8M10 14h5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Trivex home">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="#56C98F"/><path d="M8 9h10M13 9v9" stroke="#0E2A21" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Trivex
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><i></i>Menu</button>
+    <nav id="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a class="btn btn-light" href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <div class="dots page-hero">
+    <div class="wrap">
+      <h1>Tell us what needs fixing</h1>
+      <p class="lede">Send a short note about your business and your setup. An engineer will read it and reply with next steps within one business day.</p>
+    </div>
+  </div>
+
+<main>
+  <section class="sec">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Email us</h2>
+        <a class="mail" href="mailto:trivexitsolution@gmail.com">trivexitsolution@gmail.com</a>
+        <div class="actions"><button class="btn btn-outline" type="button" id="copy">Copy address</button></div>
+        <p class="reply"><i></i>We reply within one business day.</p>
+        <div class="include">
+          <h3>Useful to include</h3>
+          <ul>
+            <li>How many people and devices you have</li>
+            <li>The systems you use now, such as email, accounting or Odoo</li>
+            <li>What’s going wrong, or what you’d like to set up</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="form-wrap">
+      <form id="enquiry" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="0235cfc2-4097-4365-837b-43fb142e3b83">
+        <input type="hidden" name="subject" value="Website enquiry">
+        <input type="hidden" name="from_name" value="Trivex website">
+        <input type="hidden" name="services" value="">
+        <input type="hidden" name="redirect" value="">
+        <h3>Or send your enquiry here</h3>
+        <div class="two">
+          <label class="field"><span>Your name</span><input type="text" name="name" autocomplete="name" required></label>
+          <label class="field"><span>Your email</span><input type="email" name="email" autocomplete="email" required></label>
+          <label class="field"><span>Company</span><input type="text" name="company" autocomplete="organization" required></label>
+          <label class="field"><span>Phone</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel" required></label>
+        </div>
+        <input type="checkbox" name="botcheck" class="trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <fieldset id="svc-set">
+          <legend>What do you need help with?</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" value="Managed IT support" data-slug="managed-it"><span>Managed IT support</span></label>
+            <label class="chip"><input type="checkbox" value="Cloud and infrastructure" data-slug="cloud"><span>Cloud and infrastructure</span></label>
+            <label class="chip"><input type="checkbox" value="Odoo ERP" data-slug="odoo"><span>Odoo ERP</span></label>
+            <label class="chip"><input type="checkbox" value="Custom software" data-slug="software"><span>Custom software</span></label>
+            <label class="chip"><input type="checkbox" value="Mobile apps" data-slug="mobile-apps"><span>Mobile apps</span></label>
+            <label class="chip"><input type="checkbox" value="AI agents" data-slug="ai-agents"><span>AI agents</span></label>
+            <label class="chip"><input type="checkbox" value="Chatbots" data-slug="chatbots"><span>Chatbots</span></label>
+            <label class="chip"><input type="checkbox" value="Security" data-slug="security"><span>Security</span></label>
+          </div>
+        </fieldset>
+        <label class="field"><span>What’s going on?</span><textarea name="message" required placeholder="For example: 15 staff, Odoo 16 for sales and stock, and no backups set up yet."></textarea></label>
+        <button class="btn btn-dark" type="submit" id="send">Send enquiry</button>
+        <p class="form-note" id="form-note" aria-live="polite">We reply within one business day.</p>
+      </form>
+
+      <div class="sent" id="sent" hidden tabindex="-1">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="m15 24 6 6 12-13"/></svg>
+        <h3>Enquiry sent</h3>
+        <p id="sent-text">Thanks. An engineer will reply within one business day.</p>
+        <button class="btn btn-outline" type="button" id="again">Send another enquiry</button>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec white">
+    <div class="wrap faq">
+      <div>
+        <h2>Common questions</h2>
+        <p class="lede">Can’t find your answer? Email us and an engineer will reply.</p>
+      </div>
+      <div>
+        <details><summary>What does managed IT support include?</summary><p>A helpdesk for your staff, monitoring of your devices and servers, security updates, backups and a monthly report on what we fixed.</p></details>
+        <details><summary>Can you take over our existing Odoo setup?</summary><p>Yes. We start with a review of your current modules, customisations and data, then take over support or plan an upgrade.</p></details>
+        <details><summary>How is pricing structured?</summary><p>Projects are quoted at a fixed price after an audit. Ongoing support is a monthly plan based on the number of users and devices.</p></details>
+        <details><summary>Do we need to replace our current systems?</summary><p>Usually not. We work with what you have and only recommend replacing things that are unsafe, unsupported or costing you more than they should.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot bare">
+  <div class="wrap">
+    <div class="foot">
+      <span>© <span id="yr">2026</span> Trivex. IT solutions for growing businesses.</span>
+      <nav aria-label="Footer"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></nav>
+    </div>
+    <div class="mark" aria-hidden="true">Trivex</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
